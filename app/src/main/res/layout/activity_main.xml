@@ -30,8 +30,16 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <ImageButton
-            android:id="@+id/btnSpeak"
+        <ProgressBar
+            android:id="@+id/rms_fluctuations"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleSpeak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -39,12 +47,5 @@
             android:scaleType="fitCenter"
             android:src="@android:drawable/ic_btn_speak_now"
             android:contentDescription="@string/image_button_description" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="@string/hint"/>
     </LinearLayout>
 </RelativeLayout>
