@@ -6,11 +6,42 @@
     android:layout_height="match_parent"
     tools:context="com.example.v0icem4sk.MainActivity">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_above="@id/btnSpeakContainer"
+    <LinearLayout
+        android:id="@+id/textInput"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_above="@id/voiceText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="Enter some text"
+            android:minLines="2"
+            android:padding="10dp" >
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/speak_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Speak Now" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/voiceText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnSpeakContainer"
+        android:layout_marginTop="-184dp"
         android:layout_marginBottom="20dp"
         android:padding="20dp">
 
