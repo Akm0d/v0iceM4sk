@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
             }
         });
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -80,14 +81,17 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
                 }
         }
     }
+
     @Override
     public void onResume() {
         super.onResume();
     }
+
     @Override
     protected void onPause() {
         super.onPause();
     }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -96,22 +100,26 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
             Log.i(LOG_TAG, "destroy");
         }
     }
+
     @Override
     public void onBeginningOfSpeech() {
         Log.i(LOG_TAG, "onBeginningOfSpeech");
         progressBar.setIndeterminate(false);
         progressBar.setMax(10);
     }
+
     @Override
     public void onBufferReceived(byte[] buffer) {
         Log.i(LOG_TAG, "onBufferReceived: " + Arrays.toString(buffer));
     }
+
     @Override
     public void onEndOfSpeech() {
         Log.i(LOG_TAG, "onEndOfSpeech");
         progressBar.setIndeterminate(true);
         toggleButton.setChecked(false);
     }
+
     @Override
     public void onError(int errorCode) {
         String errorMessage = getErrorText(errorCode);
@@ -119,18 +127,22 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
         returnedText.setText(errorMessage);
         toggleButton.setChecked(false);
     }
+
     @Override
     public void onEvent(int arg0, Bundle arg1) {
         Log.i(LOG_TAG, "onEvent");
     }
+
     @Override
     public void onPartialResults(Bundle arg0) {
         Log.i(LOG_TAG, "onPartialResults");
     }
+
     @Override
     public void onReadyForSpeech(Bundle arg0) {
         Log.i(LOG_TAG, "onReadyForSpeech");
     }
+
     @Override
     public void onResults(Bundle results) {
         Log.i(LOG_TAG, "onResults");
@@ -143,11 +155,13 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
         }
         returnedText.setText(text.toString());
     }
+
     @Override
     public void onRmsChanged(float rmsdB) {
         Log.i(LOG_TAG, "onRmsChanged: " + rmsdB);
         progressBar.setProgress((int) rmsdB);
     }
+
     public static String getErrorText(int errorCode) {
         String message;
         switch (errorCode) {
